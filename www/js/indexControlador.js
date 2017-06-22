@@ -95,11 +95,9 @@ ons.bootstrap().controller('indexControlador', function ($scope, $http) {
         navigator.camera.getPicture(onSuccess, onFail, {quality: 50,
             destinationType: Camera.DestinationType.DATA_URL});
 
-        function onSuccess(imageURI) {  
-            alert(imageURI);
+        function onSuccess(imageURI) {              
             var image = document.getElementById('miFoto');
             image.src = "data:image/jpeg;base64," + imageURI;
-            document.getElementById("text1").innerHTML = imageURI;
         }
 
         function onFail(message) {
